@@ -4,6 +4,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Dataset: Kinetics-700](https://img.shields.io/badge/Dataset-Kinetics--700-orange.svg)](https://huggingface.co/datasets/atalaydenknalbant/Kinetics-700)
+[![Downsampled Dataset](https://img.shields.io/badge/Download-112x112%20Archives-purple.svg)](https://huggingface.co/datasets/kaziistiyak/Kinetics-700)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 An interactive, multi-threaded GUI downloader and preprocessing manager designed to automate fetching, extracting, and radically compressing the Kinetics-700 dataset on the fly.
@@ -15,6 +16,7 @@ An interactive, multi-threaded GUI downloader and preprocessing manager designed
 ---
 
 ## 📑 Table of Contents
+- [Direct Download: Preprocessed 112x112 Dataset](#direct-download)
 - [The Problem & The Solution](#the-problem-the-solution)
 - [Smart Compression Architecture](#smart-compression)
 - [Fault Tolerance & Dual-Drive Storage](#fault-tolerance)
@@ -22,6 +24,37 @@ An interactive, multi-threaded GUI downloader and preprocessing manager designed
 - [Kinetics-700 Dataset Card](#dataset-card)
 - [FFmpeg Requirement](#ffmpeg-requirement)
 - [Virtual Environment Integration](#virtual-environment)
+
+---
+
+<a id="direct-download"></a>
+## 📦 Direct Download: Preprocessed 112x112 Dataset
+
+If you do not want to run the downloader and preprocessing pipeline yourself, you can download the already downsampled Kinetics-700 archive release here:
+
+**👉 [kaziistiyak/Kinetics-700 on Hugging Face](https://huggingface.co/datasets/kaziistiyak/Kinetics-700)**
+
+This hosted release contains split `.zip` archives of the processed `112x112` dataset so users can download, extract, and start training without downloading the full raw Kinetics-700 archives first.
+
+Available archive files:
+
+| File | Purpose |
+|------|---------|
+| `train.zip` | Downsampled training split |
+| `validation.zip` | Downsampled validation split |
+| `test.zip` | Downsampled test split |
+| `raw.zip` | Source metadata files used by the downloader |
+
+Example extraction:
+
+```bash
+unzip train.zip
+unzip validation.zip
+unzip test.zip
+unzip raw.zip
+```
+
+The rest of this repository is for users who want to reproduce the download, extraction, and TSN-style downsampling pipeline themselves.
 
 ---
 
